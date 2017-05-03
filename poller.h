@@ -4,13 +4,6 @@
 #include <fcntl.h>
 #include "common.h"
 
-/*static int setnonblocking(int fd)
-{
-    int old_option = fcntl(fd, F_GETFL);
-    int new_option = old_option | O_NONBLOCK;
-    fcntl(fd, F_SETFL, new_option);
-    return old_option;
-}*/
 
 class IPoller;
 
@@ -69,6 +62,8 @@ public:
     {
         handler_ = handler;
     }
+
+    int setnonblocking(int fd);
 protected:
     PollHandler *handler_;
 };

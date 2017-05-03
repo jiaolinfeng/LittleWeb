@@ -5,7 +5,7 @@ int main()
 {
     Server server;
     server.start();
-    char ch = getchar();
+    server.work();
     server.stop();
     return 0;
 }
